@@ -24,11 +24,43 @@ A Blazor WebAssembly application with an API backend for managing employees. The
     dotnet ef database update
     ```
 
+5. **Run in package manager console:**
+    ```sh
+    Add-Migration InitialCreate
+    Update-Database
+    dotnet tool install --global dotnet-ef
+    dotnet ef migrations add InitialCreate
+    dotnet ef database update
+    ```
+
 ## Usage
 Usage details: To be filled later.
 
 ## Debugging Instructions
-Debugging instructions: To be filled later.
+To debug the Employee Management application, both the API and the Web projects need to be started. Follow these steps:
+
+1. **Open the Solution:**
+   Open the `EmployeeManagement.sln` solution in Visual Studio.
+
+2. **Set Multiple Startup Projects:**
+   - Right-click on the solution in the Solution Explorer and select `Properties`.
+   - In the `Common Properties` section, select `Startup Project`.
+   - Choose the `Multiple startup projects` option.
+   - Set the `Action` for both `EmployeeManagement.API` and `EmployeeManagement.Web` to `Start`.
+
+3. **Start Debugging:**
+   - Press `F5` or click the `Start` button in Visual Studio to start debugging both projects.
+   - The API will run on `https://localhost:53399` and the Web project will run on `https://localhost:53401`.
+
+4. **Check Logs:**
+   - The API project uses ASP.NET Core logging. Check the output in the Visual Studio Output window or configure logging in `appsettings.json` to write logs to a file.
+   - The Web project can be debugged using browser developer tools.
+
+5. **Apply Migrations:**
+   Ensure that the database migrations are applied before running the application. You can do this by running the following commands in the Package Manager Console:
+   ```sh
+   Add-Migration InitialCreate
+   Update-Database
 
 ## Infrastructure and Deployment
 Infrastructure and deployment information: To be filled later.
