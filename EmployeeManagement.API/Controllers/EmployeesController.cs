@@ -41,8 +41,10 @@ namespace EmployeeManagement.API.Controllers
         }
 
         /// <summary>
-        /// Creates a new employee
+        /// Creates a new employee.
         /// </summary>
+        /// <param name="employee">The employee to create. Example: { "FirstName": "Jane", "LastName": "Smith", "Email": "jane.smith@example.com", "Department": "HR", "DateOfBirth": "1992-05-15T00:00:00", "Salary": 60000 }</param>
+        /// <returns>The created employee.</returns>
         [HttpPost]
         [ProducesResponseType(typeof(Employee), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -53,8 +55,10 @@ namespace EmployeeManagement.API.Controllers
         }
 
         /// <summary>
-        /// Updates an existing employee
+        /// Updates an existing employee.
         /// </summary>
+        /// <param name="id">The ID of the employee to update. Example: 1</param>
+        /// <param name="employee">The employee details to update. Example: { "Id": 1, "FirstName": "John", "LastName": "Doe", "Email": "john.doe@example.com", "Department": "IT", "DateOfBirth": "1985-10-20T00:00:00", "Salary": 75000 }</param>
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

@@ -20,7 +20,7 @@ namespace EmployeeManagement.Tests
         }
 
         [Fact]
-        public async Task AddEmployee_ShouldCreateNewEmployee()
+        public async Task AddEmployee_ShouldReturnEmployeeWithId()
         {
             // Arrange
             var context = await GetDatabaseContext();
@@ -66,7 +66,7 @@ namespace EmployeeManagement.Tests
             Assert.Single(employees);
         }
 
-        
+
         
     }
 }
