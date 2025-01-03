@@ -74,8 +74,15 @@ namespace EmployeeManagement.API.Controllers
         /// </summary>
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteEmployee(int id)
         {
+            var employee = await _repository.GetByIdAsync(id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
             await _repository.DeleteAsync(id);
             return NoContent();
         }
