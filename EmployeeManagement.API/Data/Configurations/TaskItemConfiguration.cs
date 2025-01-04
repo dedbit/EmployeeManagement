@@ -19,9 +19,6 @@ namespace EmployeeManagement.API.Data.Configurations
                 .IsRequired()
                 .HasMaxLength(20)
                 .HasDefaultValue("To do")
-                .HasConversion(
-                    v => v.ToString(),
-                    v => (TaskStatus)Enum.Parse(typeof(TaskStatus), v))
                 .HasCheckConstraint("CK_TaskItem_Status", "[Status] IN ('To do', 'In Progress', 'Done', 'Removed')");
 
             builder.HasOne(t => t.Employee)
