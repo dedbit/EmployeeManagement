@@ -61,7 +61,8 @@ Add-Migration InitialCreate
 Update-Database
    
 dotnet tool install --global dotnet-ef
-   
+
+cd .\EmployeeManagement.API\
 dotnet ef migrations add InitialCreate
    
 dotnet ef database update
