@@ -61,7 +61,7 @@ namespace EmployeeManagement.API.Migrations
                     b.ToTable("Employees");
                 });
 
-            modelBuilder.Entity("EmployeeManagement.Core.Entities.Task", b =>
+            modelBuilder.Entity("EmployeeManagement.Core.Entities.TaskItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -91,10 +91,10 @@ namespace EmployeeManagement.API.Migrations
 
                     b.HasIndex("AssignedTo");
 
-                    b.ToTable("Tasks");
+                    b.ToTable("TaskItems");
                 });
 
-            modelBuilder.Entity("EmployeeManagement.Core.Entities.Task", b =>
+            modelBuilder.Entity("EmployeeManagement.Core.Entities.TaskItem", b =>
                 {
                     b.HasOne("EmployeeManagement.Core.Entities.Employee", "Employee")
                         .WithMany("Tasks")

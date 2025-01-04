@@ -12,12 +12,12 @@ namespace EmployeeManagement.API.Data
         }
 
         public DbSet<Employee> Employees => Set<Employee>();
-        public DbSet<Task> Tasks => Set<Task>();
+        public DbSet<TaskItem> TaskItems => Set<TaskItem>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
-            modelBuilder.ApplyConfiguration(new TaskConfiguration());
+            modelBuilder.ApplyConfiguration(new TaskItemConfiguration());
         }
     }
 }

@@ -28,7 +28,7 @@ namespace EmployeeManagement.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Tasks",
+                name: "TaskItems",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -40,9 +40,9 @@ namespace EmployeeManagement.API.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tasks", x => x.Id);
+                    table.PrimaryKey("PK_TaskItems", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Tasks_Employees_AssignedTo",
+                        name: "FK_TaskItems_Employees_AssignedTo",
                         column: x => x.AssignedTo,
                         principalTable: "Employees",
                         principalColumn: "Id",
@@ -50,15 +50,15 @@ namespace EmployeeManagement.API.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tasks_AssignedTo",
-                table: "Tasks",
+                name: "IX_TaskItems_AssignedTo",
+                table: "TaskItems",
                 column: "AssignedTo");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Tasks");
+                name: "TaskItems");
 
             migrationBuilder.DropTable(
                 name: "Employees");
