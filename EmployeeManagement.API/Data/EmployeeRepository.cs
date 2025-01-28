@@ -27,7 +27,7 @@ namespace EmployeeManagement.API.Data
         {
             _context.Employees.Add(employee);
             await _context.SaveChangesAsync();
-            return employee;
+            return null;
         }
 
         public async Task UpdateAsync(Employee employee)
@@ -38,6 +38,7 @@ namespace EmployeeManagement.API.Data
 
         public async Task DeleteAsync(int id)
         {
+            throw new Exception("Not implemented");
             var employee = await _context.Employees.FindAsync(id);
             if (employee != null)
             {
