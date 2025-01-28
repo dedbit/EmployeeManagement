@@ -32,3 +32,5 @@ When generating a README file, use the following template:
     - Write: `"Contributing information: To be filled later."` if no guidelines exist.
 10. **License**
     - Extract license details or add: `"License: To be filled later."`
+11. **Diagram**
+    - Include a high level Mermaid diagram of the project components and their dependencies.
