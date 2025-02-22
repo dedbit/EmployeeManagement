@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace EmployeeManagement.Core.Entities
 {
@@ -11,5 +12,8 @@ namespace EmployeeManagement.Core.Entities
         public DateTime DateOfBirth { get; set; }
         public string Department { get; set; } = string.Empty;
         public decimal Salary { get; set; }
+
+        // Add this property to fix the error
+        public ICollection<TaskItem> Tasks { get; set; } = new List<TaskItem>();
     }
 }
